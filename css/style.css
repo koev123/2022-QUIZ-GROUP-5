@@ -1,0 +1,111 @@
+body{
+    background-color: rgb(231, 201, 201);
+}
+.container{
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    border-top: 20px blue solid;
+
+}
+.passage{
+    border-bottom: 1px solid black;
+    width: 80%;
+    border: none;
+    padding: 10px;
+    margin: 20px;
+    outline: none; 
+    margin-left: 100px;
+   
+}
+#title{
+    width: 80%;
+    margin: auto;
+    margin-left: 100px;
+    outline: none;
+}
+.input-answer{
+    background: rgb(175, 171, 171);
+}
+form #input-title{
+    border-radius: 5px;
+    border: none;
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+ }
+ textarea{
+     resize: none;
+     overflow: none;
+ }
+form .add-question{
+     margin-top: 20px;
+     width: 100%;
+     background-color: white;
+ }
+ .click{
+    outline: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 30%;
+    border: none;
+ }
+ .input-r{
+    padding-left:100px;
+    width: 50%;
+ }
+.input-radio{
+     background-color: white;
+     margin-top: 20px;
+     padding-top: 10px;
+     border-radius: 10px;
+ }
+ .input-r ::placeholder{
+     color: rgb(245, 240, 240);
+
+ }
+.add-question{
+    padding: 10px;
+    border: none;
+ }
+ .input-r .add-option ::placeholder{
+    color: rgb(245, 240, 240);
+    background: rgb(156, 155, 155);
+    padding: 10px;
+ }
+input[type="text"]{
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+}
+.input-r a{
+    text-decoration: none;
+}
+hr{
+    width: 80%;
+}
+form .add-button{
+    padding: 15px;
+    margin-left:42em;
+}
+form .add-button button{
+    margin: 5px;
+}
+.btn-html{
+    background: rgb(235, 55, 55);
+    border: none;
+    padding-left:40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+}
+#btn-add{
+    background: rgb(45, 24, 233);
+}
+.btn-create{
+    background: rgb(45, 24, 233);
+}
