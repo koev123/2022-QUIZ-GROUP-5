@@ -38,7 +38,7 @@ form #input-title{
      resize: none;
      overflow: none;
  }
-form .add-question{
+.add-question{
      margin-top: 20px;
      width: 100%;
      background-color: white;
@@ -64,15 +64,15 @@ form .add-question{
      color: rgb(245, 240, 240);
 
  }
-.add-question{
+/* .add-question{
     padding: 10px;
     border: none;
- }
- .input-r .add-option ::placeholder{
+ } */
+/* .add-option ::placeholder{
     color: rgb(245, 240, 240);
     background: rgb(156, 155, 155);
     padding: 10px;
- }
+ } */
 input[type="text"]{
     margin: 10px;
     border: none;
@@ -108,4 +108,8 @@ form .add-button button{
 }
 .btn-create{
     background: rgb(45, 24, 233);
+}
+/* -----------------chansok------------ */
+.add-option-answer{
+    background: rgb(156, 155, 155);
 }
