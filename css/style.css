@@ -1,4 +1,4 @@
-body {
+    body {
     background-color: #d8d8d8;
 }
 
@@ -36,7 +36,7 @@ form #input-title {
     background: white;
     padding-top: 20px;
     padding-bottom: 20px;
-<<<<<<< HEAD
+    /* <<<<<<< HEAD */
 }
 
 textarea {
@@ -50,20 +50,19 @@ form .add-question {
     background-color: white;
 }
 
+textarea {
+    resize: none;
+    overflow: none;
+}
+
+.add-question {
+    margin-top: 20px;
+    width: 100%;
+    background-color: white;
+}
+
 .click {
-=======
- }
- textarea{
-     resize: none;
-     overflow: none;
- }
-.add-question{
-     margin-top: 20px;
-     width: 100%;
-     background-color: white;
- }
- .click{
->>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd
+    /* >>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd */
     outline: none;
     border-radius: 10px;
     margin-top: 10px;
@@ -71,7 +70,9 @@ form .add-question {
     border: none;
 }
 
-<<<<<<< HEAD
+
+/* <<<<<<< HEAD */
+
 .input-r {
     padding-left: 100px;
     width: 50%;
@@ -99,20 +100,21 @@ form .add-question {
     padding: 10px;
 }
 
-input[type="text"] {
-=======
- }
+
 /* .add-question{
     padding: 10px;
     border: none;
  } */
+
+
 /* .add-option ::placeholder{
     color: rgb(245, 240, 240);
     background: rgb(156, 155, 155);
     padding: 10px;
  } */
-input[type="text"]{
->>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd
+
+input[type="text"] {
+    /* >>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd */
     margin: 10px;
     border: none;
     border-radius: 5px;
@@ -155,7 +157,9 @@ form .add-button button {
 .btn-create {
     background: rgb(45, 24, 233);
 }
-<<<<<<< HEAD
+
+
+/* <<<<<<< HEAD */
 
 
 /* -------------somnak--------- */
@@ -191,9 +195,9 @@ nav li a {
     font-size: 20px;
     color: white;
     font-weight: bold;
-=======
-/* -----------------chansok------------ */
-.add-option-answer{
-    background: rgb(156, 155, 155);
->>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd
-}
+    /* ======= */
+    /* -----------------chansok------------ */
+    .add-option-answer {
+        background: rgb(156, 155, 155);
+    }
+    /* >>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd */
