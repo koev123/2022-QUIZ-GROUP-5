@@ -46,7 +46,7 @@ textarea {
 
 form .add-question {
     margin-top: 20px;
-    width: 100%;
+    width: 60%;
     background-color: white;
 }
 
@@ -75,7 +75,7 @@ textarea {
 
 .input-r {
     padding-left: 100px;
-    width: 50%;
+    width: 80%;
 }
 
 .input-radio {
@@ -92,6 +92,7 @@ textarea {
 .add-question {
     padding: 10px;
     border: none;
+    width: 50%;
 }
 
 .input-r .add-option ::placeholder {
@@ -124,6 +125,7 @@ input[type="text"] {
 
 .input-r a {
     text-decoration: none;
+    width: 50%;
 }
 
 hr {
@@ -196,8 +198,26 @@ nav li a {
     color: white;
     font-weight: bold;
     /* ======= */
+}
     /* -----------------chansok------------ */
-    .add-option-answer {
+.add-option-answer {
         background: rgb(156, 155, 155);
-    }
+}
     /* >>>>>>> f34f58a48c2af3c4f8aa4dfc07b10f5ba6c3fafd */
+/* ---------add score--------- */
+#Score-of-question{
+    display: flex;
+    justify-content: space-between;
+    
+    
+}
+
+.add-score{
+    width: 39px;
+    overflow: none;
+    height:20px;
+    background-color: rgb(155, 152, 152);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
