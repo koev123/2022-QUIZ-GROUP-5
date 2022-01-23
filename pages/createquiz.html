@@ -19,29 +19,34 @@
             </div>
             <div class="input-radio">
                 <div class="input-r">
-                    
+
                     <div id="Score-of-question">
-                        <input style="background:rgb(155, 152, 152);" type="text" class="add-question"   placeholder="QUESTION"><br>
+                        <input style="background:rgb(155, 152, 152);" type="text" class="add-question" placeholder="QUESTION"><br>
                         <input type="number" class="add-score" placeholder="point" style="overflow: none;">
                     </div>
                     <input type="radio" id="add-radio" name="answer">
-                    <label type="text" class="add-option" for=""><input type="text" placeholder="answer"></label><br>
+                    <label type="text" class="add-option" for=""><input type="text" id="answerKey1" placeholder="answer"></label><br>
                     <input type="radio" id="add-radio" name="answer">
-                    <label type="text" class="add-option" for=""><input type="text" placeholder="answer"><a href="">add other</a></label><br>
+                    <label type="text" class="add-option" for=""><input type="text" id="answerKey2" placeholder="answer"><a href="">add other</a></label><br>
                 </div>
                 <hr>
                 <div class="add-button">
-                    <button class="btn-html">delete</button>
-                    <button class="btn-html" id="btn-add">+ Add</button>
+                    <div>
+                        <button class="btn-html" id="btn-delete">delete</button>
+                        <button class="btn-html" id="btn-add">+ Add</button>
+                    </div>
                 </div>
             </div>
             <div class="add-button">
-                <button class="btn-html btn-create">send</button>
-                <button class="btn-html btn-create">create</button>
+                <div></div>
+                <div>
+                    <button class="btn-html btn-create">send</button>
+                    <button class="btn-html btn-create">create</button>
+                </div>
             </div>
         </form>
 
-
+        <div id="display">test</div>
     </div>
     <script src="../js/app.js"></script>
 </body>

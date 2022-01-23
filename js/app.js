@@ -1,32 +1,5 @@
 // -------------------------somnak---------------------------
-const getNav = document.querySelector("nav");
-// ---------create tag li ul a ---------
-const h2 = document.createElement("h2");
-const divUl = document.createElement("div");
-divUl.id = "menu";
-const ul = document.createElement("ul");
-const li = document.createElement("li");
-const liEdit = document.createElement("li");
-const liCreate = document.createElement("li");
-const a = document.createElement("a");
-const aEdit = document.createElement("a");
-const aCreate = document.createElement("a");
-h2.textContent = "Quiz";
-a.href = "";
-aEdit.href = "";
-aCreate.href = "../pages/createquiz.html";
-a.textContent = "Start Quiz";
-aEdit.textContent = "Edit Quiz";
-aCreate.textContent = "Create Quiz";
-li.appendChild(a);
-liCreate.appendChild(aCreate);
-liEdit.appendChild(aEdit);
-ul.appendChild(li);
-ul.appendChild(liCreate);
-ul.appendChild(liEdit);
-getNav.appendChild(h2);
-getNav.appendChild(divUl);
-divUl.appendChild(ul);
+
 // ------------------------------------
 
 // --------------chansok---------------
@@ -35,19 +8,36 @@ let passage = document.getElementById("passage");
 let enterQuestion = document.querySelector(".add-question");
 let answers = document.getElementsByName('answer');
 let addRadio = document.getElementsByClassName("add-radio");
+
+let answerKey1 = document.querySelector('#answerKey1');
+let answerKey2 = document.querySelector('#answerKey2');
+
 let getAddOption = document.getElementsByClassName("add-option-answer");
+
 let appearQuetion = document.getElementById("display");
 /*    when user input question,so it will display question on DOM  */
 function displayQuestion(e) {
     e.preventDefault();
-    console.log(title.value);
-    console.log(passage.value);
-    console.log(enterQuestion.value);
+    let data = {
+        question: enterQuestion.value,
+        answer1: answerKey1.value,
+        answer2: answerKey2.value
+    }
+
+    localStorage.setItem('Question', JSON.stringify(data));
+
+    let questiondata = localStorage.getItem('Question');
+
+    let displayData = document.getElementById("display");
+    let h1 = document.createElement("h1");
+    h1.textContent = questiondata.question;
+    displayData.appendChild(h1);
 
     let createInput = document.createElement("div");
     createInput.classList.add("input-radio");
+    createInput.style.width = "98%";
     appearQuetion.appendChild(createInput);
-    console.log(createInput);
+
 
     let createDivinput = document.createElement("div");
     createDivinput.classList.add("input-r");
@@ -58,9 +48,10 @@ function displayQuestion(e) {
     createInputQestion.type = "text";
     createInputQestion.placeholder = "QUESTION";
     createInputQestion.style.background = "grey";
-    createInputQestion.style.width = "100%";
+    createInputQestion.style.width = "58%";
     createDivinput.appendChild(createInputQestion);
-
+    let createQestion = document.createElement("br");
+    createDivinput.appendChild(createQestion);
     let inputTypeRadio = document.createElement("input");
     inputTypeRadio.type = "radio";
     createDivinput.appendChild(inputTypeRadio);
@@ -80,7 +71,6 @@ function displayQuestion(e) {
 
     let createBr = document.createElement("br");
     createDivinput.appendChild(createBr);
-    console.log(createDivinput);
     let inputTypeRadio1 = document.createElement("input");
     inputTypeRadio1.type = "radio";
     createDivinput.appendChild(inputTypeRadio1);
@@ -95,34 +85,55 @@ function displayQuestion(e) {
     // -------------------create-hr-----------
     let hr = document.createElement("hr");
     createDivinput.appendChild(hr);
-    hr.style.width = "165%";
+    hr.style.width = "100%";
 
-    // ---------------create button delete one more------------
-    let divBtn = document.createElement("div");
-    divBtn.classList.add("add-button");
-    createInput.appendChild(divBtn);
-    let btn = document.createElement("button");
-    btn.classList.add("btn-html");
-    btn.textContent = "delete";
-    let btn1 = document.createElement("button");
-    btn1.classList.add("btn-html");
-    btn1.textContent = "+ add";
-    btn1.id = "btn-add";
-    divBtn.appendChild(btn);
-    divBtn.appendChild(btn1);
+    // ---------------create button delete one more------------ 
 
+    let buttonAddOption = document.createElement("div");
+    buttonAddOption.classList.add("add-button");
+    buttonAddOption.style.display = "flex";
+    buttonAddOption.style.display = "space-between";
+    createInput.appendChild(buttonAddOption);
+    let divDeleteAdd = document.createElement("div");
+    buttonAddOption.appendChild(divDeleteAdd);
+
+    let buttonAddOption1 = document.createElement("button");
+    buttonAddOption1.textContent = "delete";
+    buttonAddOption1.classList.add("btn-html");
+    buttonAddOption1.classList.add("btn-option");
+    divDeleteAdd.appendChild(buttonAddOption1);
+
+    let buttonAdd = document.getElementById("btn-add");
+    divDeleteAdd.appendChild(buttonAdd);
+    console.log(createInput)
+
+
+}
+
+// Delete action 
+function removefunction(e) {
+    e.preventDefault(e);
+    console.log("test");
+
+
+
+    // function addOther(e) {
+    //     e.preventDefault();
+    //     console.log(title.value);
+    //     console.log(passage.value);
+    //     console.log(enterQuestion.value);
 
 }
 
-function addOther(e) {
-    e.preventDefault();
-    console.log(title.value);
-    console.log(passage.value);
-    console.log(enterQuestion.value);
 
-}
-let buttonAddOption = document.getElementById("addOther");
-buttonAddOption.addEventListener("click", addOther)
+// ----------------------------
+// --------------
+// let buttonAddOption = document.getElementById("addOther");
+// buttonAddOption.addEventListener("click", addOther)
 
 let button = document.getElementById("btn-add");
 button.addEventListener("click", displayQuestion);
+
+// Delete btn
+let btn = document.getElementById("btn-delete");
+btn.addEventListener("click", removefunction);
