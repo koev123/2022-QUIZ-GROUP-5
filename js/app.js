@@ -1,4 +1,4 @@
-
+/*   link id or class from html to js recognize each  */
 // --------------chansok---------------
 let title = document.getElementById("title");
 let passage = document.getElementById("passage");
@@ -12,15 +12,18 @@ let answerKey2 = document.querySelector('#answerKey2');
 let getAddOption = document.getElementsByClassName("add-option-answer");
 
 let appearQuetion = document.getElementById("display");
-// ---------
+// 
 let createQuiz=document.getElementById("createQuiz");
 let getQuiz = document.getElementById("displayQuiz");
 getQuiz.style.display="none";
-/*    when user input question,so it will display question on DOM  */
+/*   all question that user input will be display on DOM */
 function displayQuestion(e) {
     e.preventDefault();
+    // when user click this function start quiz will be disappear
     getQuiz.style.display="none";
+    // when user click this function start quiz will be appear
     createQuiz.style.display="block";
+    // all data user input will be store on Local Storage
     let data = {
         question: enterQuestion.value,
         answer1: answerKey1.value,
@@ -30,28 +33,31 @@ function displayQuestion(e) {
     localStorage.setItem('Question', JSON.stringify(data));
     let questiondata = localStorage.getItem('Question');
     console.log(questiondata);
-    let displayData = document.getElementById("display");
-    let h1 = document.createElement("h1");
-    h1.textContent = questiondata.question;
-    displayData.appendChild(h1);
-
-    let createInput = document.createElement("div");
-    createInput.classList.add("input-radio");
-    createInput.style.width = "98%";
-    appearQuetion.appendChild(createInput);
 
 
+    /*   div that cover input radio and answer */
+    let divCoverInput = document.createElement("div");
+    divCoverInput.classList.add("input-radio");
+    divCoverInput.style.width = "98%";
+    divCoverInput.style.paddingBottom="48px";
+    divCoverInput.style.transformTranslate=("50%,50%");
+    appearQuetion.appendChild(divCoverInput);
+
+    //create div class input to cover all input radio
     let createDivinput = document.createElement("div");
     createDivinput.classList.add("input-r");
-    createInput.appendChild(createDivinput);
+    divCoverInput.appendChild(createDivinput);
 
+    /*    create input for user can input      */
     let createInputQestion = document.createElement("input");
-    createInput.classList.add("add-question");
+    divCoverInput.classList.add("add-question");
     createInputQestion.type = "text";
     createInputQestion.placeholder = "QUESTION";
     createInputQestion.style.background = "grey";
     createInputQestion.style.width = "58%";
     createDivinput.appendChild(createInputQestion);
+
+    //create tag br for break line down 
     let createQestion = document.createElement("br");
     createDivinput.appendChild(createQestion);
     let inputTypeRadio = document.createElement("input");
@@ -63,7 +69,7 @@ function displayQuestion(e) {
     label.classList.add("add-option");
     createDivinput.appendChild(label);
 
-
+    //create for add other answer in our question 
     let inputInLabel = document.createElement("input");
     inputInLabel.classList.add("add-option-answer");
     inputInLabel.id = "addOther";
@@ -73,10 +79,12 @@ function displayQuestion(e) {
 
     let createBr = document.createElement("br");
     createDivinput.appendChild(createBr);
+    // create easy user click
     let inputTypeRadio1 = document.createElement("input");
     inputTypeRadio1.type = "radio";
     createDivinput.appendChild(inputTypeRadio1);
 
+    //create for add other answer in our question 
     let inputInLabel1 = document.createElement("input");
     inputInLabel1.classList.add("add-option-answer");
     inputInLabel1.id = "addOther";
@@ -84,7 +92,7 @@ function displayQuestion(e) {
     inputInLabel1.placeholder = "answer";
     createDivinput.appendChild(inputInLabel1);
 
-    // -------------------create-hr-----------
+    // -------------------create-hr to make style in DOM form -----------
     let hr = document.createElement("hr");
     createDivinput.appendChild(hr);
     hr.style.width = "100%";
@@ -93,32 +101,31 @@ function displayQuestion(e) {
 
     let buttonAddOption = document.createElement("div");
     buttonAddOption.classList.add("add-button");
-    buttonAddOption.style.display = "flex";
-    buttonAddOption.style.display = "space-between";
-    createInput.appendChild(buttonAddOption);
+    divCoverInput.appendChild(buttonAddOption);
     let divDeleteAdd = document.createElement("div");
     buttonAddOption.appendChild(divDeleteAdd);
-
+    
+    // user for delete question when user input wrong and want to correct
     let buttonAddOption1 = document.createElement("button");
     buttonAddOption1.textContent = "delete";
+    buttonAddOption1.classList.add("btn-delete");
     buttonAddOption1.classList.add("btn-html");
-    buttonAddOption1.classList.add("btn-option");
     divDeleteAdd.appendChild(buttonAddOption1);
-
-    let buttonAdd = document.getElementById("btn-add");
-    divDeleteAdd.appendChild(buttonAdd);
-    console.log(createInput)
+    
 }
-
+/*  where user can quiz  */
 function startQuiz(e){
     e.preventDefault();
+    // when user click this function start quiz will be appear
     getQuiz.style.display="block";
+    // when user click this function start quiz will be disappear
     createQuiz.style.display="none";
 }
 
-
+/*button user click link to start quiz */
 const btnDisplayQuiz = document.getElementById("start-quiz");
 btnDisplayQuiz.addEventListener("click", startQuiz);
 
-const buttonDisplay = document.getElementById("creatge-quiz");
+/*button user click link to create quiz */
+const buttonDisplay = document.getElementById("btn-add");
 buttonDisplay.addEventListener("click", displayQuestion);

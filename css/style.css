@@ -127,15 +127,6 @@
     hr {
         width: 80%;
     }
-    /* form .add-button {
-        padding: 15px;
-        margin-left: 29em;
-    } */
-    
-    form .add-button button {
-        margin: 5px;
-    }
-    
     .btn-html {
         background: rgb(235, 55, 55);
         border: none;
@@ -154,10 +145,9 @@
     .btn-create {
         background: rgb(45, 24, 233);
     }
-    
-    .add-button {
-        display: flex;
-        justify-content: space-between;
+    .add-button{
+        float: right;
+        transform: translate(-38%,2%);
     }
     /* <<<<<<< HEAD */
     /* -------------somnak--------- */
@@ -203,6 +193,10 @@
     }
     .m-t{
         margin-top: 20px;
+    }
+    .btn-delete{
+        float:right;
+        transform: translate(-165%,20%);
     }
     /* -----------------chansok------------ */
     
