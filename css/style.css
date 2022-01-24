@@ -189,6 +189,21 @@
         font-weight: bold;
         /* ======= */
     }
+    .p-title{
+        margin: 0;
+        padding: 40px;
+    }
+    .p{
+        padding: 50px;
+        list-style-type: none;
+    }
+    .button-right{
+        float:right;
+        transform: translate(-75%,20%);
+    }
+    .m-t{
+        margin-top: 20px;
+    }
     /* -----------------chansok------------ */
     
     .add-option-answer {

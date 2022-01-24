@@ -1,6 +1,3 @@
-// -------------------------somnak---------------------------
-
-// ------------------------------------
 
 // --------------chansok---------------
 let title = document.getElementById("title");
@@ -15,19 +12,24 @@ let answerKey2 = document.querySelector('#answerKey2');
 let getAddOption = document.getElementsByClassName("add-option-answer");
 
 let appearQuetion = document.getElementById("display");
+// ---------
+let createQuiz=document.getElementById("createQuiz");
+let getQuiz = document.getElementById("displayQuiz");
+getQuiz.style.display="none";
 /*    when user input question,so it will display question on DOM  */
 function displayQuestion(e) {
     e.preventDefault();
+    getQuiz.style.display="none";
+    createQuiz.style.display="block";
     let data = {
         question: enterQuestion.value,
         answer1: answerKey1.value,
         answer2: answerKey2.value
     }
-
+    console.log("data",data);
     localStorage.setItem('Question', JSON.stringify(data));
-
     let questiondata = localStorage.getItem('Question');
-
+    console.log(questiondata);
     let displayData = document.getElementById("display");
     let h1 = document.createElement("h1");
     h1.textContent = questiondata.question;
@@ -57,7 +59,7 @@ function displayQuestion(e) {
     createDivinput.appendChild(inputTypeRadio);
 
     let label = document.createElement("label");
-    label.type = "text";
+    // label.type = "text";
     label.classList.add("add-option");
     createDivinput.appendChild(label);
 
@@ -106,34 +108,17 @@ function displayQuestion(e) {
     let buttonAdd = document.getElementById("btn-add");
     divDeleteAdd.appendChild(buttonAdd);
     console.log(createInput)
-
-
 }
 
-// Delete action 
-function removefunction(e) {
-    e.preventDefault(e);
-    console.log("test");
-
-
-
-    // function addOther(e) {
-    //     e.preventDefault();
-    //     console.log(title.value);
-    //     console.log(passage.value);
-    //     console.log(enterQuestion.value);
-
+function startQuiz(e){
+    e.preventDefault();
+    getQuiz.style.display="block";
+    createQuiz.style.display="none";
 }
 
 
-// ----------------------------
-// --------------
-// let buttonAddOption = document.getElementById("addOther");
-// buttonAddOption.addEventListener("click", addOther)
+const btnDisplayQuiz = document.getElementById("start-quiz");
+btnDisplayQuiz.addEventListener("click", startQuiz);
 
-let button = document.getElementById("btn-add");
-button.addEventListener("click", displayQuestion);
-
-// Delete btn
-let btn = document.getElementById("btn-delete");
-btn.addEventListener("click", removefunction);
+const buttonDisplay = document.getElementById("creatge-quiz");
+buttonDisplay.addEventListener("click", displayQuestion);
