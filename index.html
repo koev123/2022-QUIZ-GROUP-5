@@ -10,186 +10,38 @@
 </head>
 
 <body>
-    
-    <!-- ------------------------- somnak menu--------------- -->
-    <nav>
-        <h2>Quiz</h2>
-        <ul>
-            <li>
-                <a href="" id="start-quiz">Start Quiz</a>
-            </li>
-            <li>
-                <a href="" id="creatge-quiz">Create Quiz</a>
-            </li>
-            <li>
-                <a href="">Edit Quiz</a>
-            </li>
-        </ul>
+    <!-- if you need menu for next task -->
+    <header>
+
+    </header>
+    <!-- display question for role teacher only -->
+    <section id="edit-question">
+        <!-- I need on form here -->
+        <div id="form-add-question">
+            <!-- TODO -->
+            <form action="">
+                <ul class="title">
+                    <input type="text" id="" placeholder="Title..."><br />
+                    <hr />
+                    <input type="text" placeholder="Description"><br />
+                </ul>
+                <ul class="enter-question">
+                    <input type="text" id="getQuestion" placeholder="Question"><br />
+                    <input type="radio" name="answer"><label for=""><input id="getChoice1" type="text" placeholder="Enter answer"></label><br>
+                    <input type="radio" name="answer"><label for=""><input id="getChoice2"  type="text" placeholder="Enter answer"></label><br>
+                    <input type="radio" name="answer"><label for=""><input id="getChoice3"  type="text" placeholder="Enter answer"></label><br>
+                    <hr />
+                    <button id="add-question" style="background: blue;">+ Add</button>
+                    <button id="add-display" style="background: blue;">+ display</button>
+                    <button class="delete" style="background:red;">Delete</button>
+                </ul>
+            </form>
         </div>
-    </nav>
-    <!-- ----------------------koev-------------------------------->
-    <div class="container m-t " id="createQuiz">
-        <form action="">
-            <div id="input-title">
-                <input type="text" id="title" placeholder="Title...">
-                <hr/>
-                <textarea name="" id="" class="passage" placeholder="Description"></textarea>
-            </div>
-            <div class="input-radio p">
-                <div class="input-r">
-
-                    <div id="Score-of-question">
-                        <input style="background:rgb(155, 152, 152);" type="text" class="add-question" placeholder="QUESTION"><br />
-                        <input type="number" class="add-score" placeholder="point" style="overflow: none;">
-                    </div>
-                    <input type="radio" id="add-radio" name="answer">
-                    <label type="text" class="add-option" for=""><input type="text" id="answerKey1" placeholder="answer"></label><br />
-                    <input type="radio" id="add-radio" name="answer">
-                    <label type="text" class="add-option" for=""><input type="text" id="answerKey2" placeholder="answer"><br />
-                    <label type="text" class="add-option" for=""><input type="text" id="answerKey3" placeholder="answer"><a href="">add other</a></label><br>
-                </div>
-                <hr>
-                <div class="add-button">
-                    <div>
-                        <button class="btn-html" id="btn-delete">delete</button>
-                        <button class="btn-html" id="btn-add" >+ Add</button>
-                    </div>
-                </div>
-            </div>
-            <div class="button-right ">
-                <div>
-                    <button class="btn-html btn-create">send</button>
-                    <button class="btn-html btn-create">create</button>
-                </div>
-            </div>
-        </form>
-
-        <div id="display"></div>
-    </div>
-
-
-
-    <div class="container "id="displayQuiz" >
-        <div class="input-radio p-title" >
-            <h2 id="title">Quiz</h2>
-            <hr/>
-            <p class="passage">This is quiz</p>
+        <!-- I need all the questions display here -->
+        <div id="display-qustions">
+            <!-- TODO -->
         </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>1. Form of past simple positive :</li>
-                <input type="radio" name="answer1" ><label for="">A. S + V1 + Obj</label><br />
-                <input type="radio" name="answer1" ><label for="">B. S + V2 + Obj</label><br />
-                <input type="radio" name="answer1" ><label for="">C. S + V3 + Obj</label><br />
-                <input type="radio" name="answer1" ><label for="">D. S + Ving + Obj</label><br />
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>2. I _____ to the mall after school.</li>
-                <input type="radio" name="answer2" ><label for="">A.  goed</label><br />
-                <input type="radio" name="answer2" ><label for="">B. gone</label><br />
-                <input type="radio" name="answer2" ><label for="">C. went</label><br />
-                <input type="radio" name="answer2" ><label for="">D. wented</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>3. Sorry, I ________ hear you at the door. </li>
-                <input type="radio" name="answer3" ><label for="">A. wasn't</label><br />
-                <input type="radio" name="answer3" ><label for="">B. didn't</label><br />
-                <input type="radio" name="answer3" ><label for="">C. am not</label><br />
-                <input type="radio" name="answer3" ><label for="">D. had not</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>4. What _____ you eat for lunch yesterday?</li>
-                <input type="radio" name="answer4" ><label for="">A. do</label><br />
-                <input type="radio" name="answer4" ><label for="">B. did</label><br />
-                <input type="radio" name="answer4" ><label for="">C. were</label><br />
-                <input type="radio" name="answer4" ><label for="">D. had</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>5. _____ Mike visit his grandmother last night?</li>
-                <input type="radio" name="answer5" ><label for="">A. Do</label><br />
-                <input type="radio" name="answer5" ><label for="">B. Is</label><br />
-                <input type="radio" name="answer5" ><label for="">C. Did</label><br />
-                <input type="radio" name="answer5" ><label for="">D. Had</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>6. Alex did not _____ last weekend.</li>
-                <input type="radio" name="answer6" ><label for="">A. working</label><br />
-                <input type="radio" name="answer6" ><label for="">B. worked</label><br />
-                <input type="radio" name="answer6" ><label for="">C. word</label><br />
-                <input type="radio" name="answer6" ><label for="">D. workeding</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>7. How do we use the past simple?</li>
-                <input type="radio" name="answer" ><label for="">A.  happened and finished in the past </label><br />
-                <input type="radio" name="answer" ><label for="">B.  Habits</label><br />
-                <input type="radio" name="answer" ><label for="">C.  actions began in the past</label><br />
-                <input type="radio" name="answer" ><label for="">D.  habits or repeated actions.</label><br />
-
-            </div>
-            <hr>>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>8. Question form of past simple:</li>
-                <input type="radio" name="answer7" ><label for="">A.  Did +S +  V2(base form)  + Obj +?</label><br />
-                <input type="radio" name="answer7" ><label for="">B.  Was /were +V2(base form)  + Obj +?</label><br />
-                <input type="radio" name="answer7" ><label for="">C.  Did + S + V1(base form) +Obj? </label><br />
-                <input type="radio" name="answer7" ><label for="">D.  Do/Dose + S + V1(base form) +Obj? </label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>9. Negative form of past simple:</li>
-                <input type="radio" name="answer8" ><label for="">A.  S + did + not + V2(base form) + Obj</label><br />
-                <input type="radio" name="answer8" ><label for="">B.  S + to be + not + V1(base form) + Obj</label><br />
-                <input type="radio" name="answer8" ><label for="">C.  S + was/were + not + V2(base form) + Obj</label><br />
-                <input type="radio" name="answer8" ><label for="">C.  S + did + not + V1(base form) + Obj</label><br />
-
-            </div>
-            <hr>
-        </div>
-        <div class="input-radio p">
-            <div class="passage">
-                <li>10. _____ Judy and Liz at last month's meeting?</li>
-                <input type="radio" name="answer9" ><label for="">A.  Was</label><br />
-                <input type="radio" name="answer9" ><label for="">B.  were</label><br />
-                <input type="radio" name="answer9" ><label for="">C.  Are</label><br />
-                <input type="radio" name="answer9" ><label for="">D.  Is</label><br />
-            
-            </div>
-            <hr>
-        </div>
-    </div>
-        <div class="add-button button-right p">
-            <button class="btn-html delete">submit</button>
-    </div>
-        
-    </div>
+    </section>
     <script src="js/app.js"></script>
 </body>
 
