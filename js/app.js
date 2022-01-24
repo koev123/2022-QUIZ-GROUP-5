@@ -16,6 +16,7 @@ let appearQuetion = document.getElementById("display");
 let createQuiz=document.getElementById("createQuiz");
 let getQuiz = document.getElementById("displayQuiz");
 getQuiz.style.display="none";
+
 /*   all question that user input will be display on DOM */
 function displayQuestion(e) {
     e.preventDefault();
@@ -111,8 +112,14 @@ function displayQuestion(e) {
     buttonAddOption1.classList.add("btn-delete");
     buttonAddOption1.classList.add("btn-html");
     divDeleteAdd.appendChild(buttonAddOption1);
+    let object = {};
+    object["question"]=enterQuestion.value;
+    object["choices"]=[answerKey1.value,answerKey2.value];
+    addQuestion.push(object);
     
 }
+let addQuestion=[];
+console.log(addQuestion);
 /*  where user can quiz  */
 function startQuiz(e){
     e.preventDefault();
