@@ -2,9 +2,9 @@
 // --------------chansok---------------
 let title = document.getElementById("title");
 let passage = document.getElementById("passage");
-let enterQuestion = document.querySelector(".add-question");
 let answers = document.getElementsByName('answer');
 let addRadio = document.getElementsByClassName("add-radio");
+let enterQuestion = document.querySelector(".add-question");
 
 let answerKey1 = document.querySelector('#answerKey1');
 let answerKey2 = document.querySelector('#answerKey2');
