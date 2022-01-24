@@ -8,6 +8,7 @@ let enterQuestion = document.querySelector(".add-question");
 
 let answerKey1 = document.querySelector('#answerKey1');
 let answerKey2 = document.querySelector('#answerKey2');
+let answerKey3 = document.querySelector('#answerKey3');
 
 let getAddOption = document.getElementsByClassName("add-option-answer");
 
@@ -41,7 +42,6 @@ function displayQuestion(e) {
     divCoverInput.classList.add("input-radio");
     divCoverInput.style.width = "98%";
     divCoverInput.style.paddingBottom="48px";
-    divCoverInput.style.transformTranslate=("50%,50%");
     appearQuetion.appendChild(divCoverInput);
 
     //create div class input to cover all input radio
@@ -50,10 +50,9 @@ function displayQuestion(e) {
     divCoverInput.appendChild(createDivinput);
 
     /*    create input for user can input      */
-    let createInputQestion = document.createElement("input");
+    let createInputQestion = document.createElement("ul");
     divCoverInput.classList.add("add-question");
-    createInputQestion.type = "text";
-    createInputQestion.placeholder = "QUESTION";
+    createInputQestion.textContent=enterQuestion.value;
     createInputQestion.style.background = "grey";
     createInputQestion.style.width = "58%";
     createDivinput.appendChild(createInputQestion);
@@ -61,37 +60,41 @@ function displayQuestion(e) {
     //create tag br for break line down 
     let createQestion = document.createElement("br");
     createDivinput.appendChild(createQestion);
-    let inputTypeRadio = document.createElement("input");
-    inputTypeRadio.type = "radio";
-    createDivinput.appendChild(inputTypeRadio);
+    let radioAnswer1 = document.createElement("input");
+    radioAnswer1.name="answer";
+    radioAnswer1.type = "radio";
+    createDivinput.appendChild(radioAnswer1);
 
     let label = document.createElement("label");
-    // label.type = "text";
+    label.textContent=answerKey1.value;
     label.classList.add("add-option");
     createDivinput.appendChild(label);
-
-    //create for add other answer in our question 
-    let inputInLabel = document.createElement("input");
-    inputInLabel.classList.add("add-option-answer");
-    inputInLabel.id = "addOther";
-    inputInLabel.type = "text";
-    inputInLabel.placeholder = "answer";
-    createDivinput.appendChild(inputInLabel);
 
     let createBr = document.createElement("br");
     createDivinput.appendChild(createBr);
     // create easy user click
-    let inputTypeRadio1 = document.createElement("input");
-    inputTypeRadio1.type = "radio";
-    createDivinput.appendChild(inputTypeRadio1);
+    let radioAnswer2 = document.createElement("input");
+    radioAnswer2.type = "radio";
+    radioAnswer2.name="answer";
+    createDivinput.appendChild(radioAnswer2);
 
-    //create for add other answer in our question 
-    let inputInLabel1 = document.createElement("input");
-    inputInLabel1.classList.add("add-option-answer");
-    inputInLabel1.id = "addOther";
-    inputInLabel1.type = "text";
-    inputInLabel1.placeholder = "answer";
-    createDivinput.appendChild(inputInLabel1);
+    let label2 = document.createElement("label");
+    label2.textContent=answerKey2.value;
+    label2.classList.add("add-option");
+    createDivinput.appendChild(label2);
+
+    let createBr3 = document.createElement("br");
+    createDivinput.appendChild(createBr3);
+    // create easy user click
+    let radioAnswer3 = document.createElement("input");
+    radioAnswer3.type = "radio";
+    radioAnswer3.name="answer";
+    createDivinput.appendChild(radioAnswer3);
+
+    let label3 = document.createElement("label");
+    label3.textContent=answerKey3.value;
+    label3.classList.add("add-option");
+    createDivinput.appendChild(label3);
 
     // -------------------create-hr to make style in DOM form -----------
     let hr = document.createElement("hr");
