@@ -2,6 +2,7 @@ body{
     margin: 0;
     padding: 0;
     background: rgb(196, 194, 194);
+    font-family: 'Times New Roman', Times, serif;
 }
 form{
     width: 80%;
@@ -37,11 +38,19 @@ li{
 }
 .delete{
     background: red;
+    color: white;
 
 }
 .color-blue{
     background: rgb(0, 0, 165);
+    color: white;
 }
 .d-flex{
-    display: block;
+   display: block;
+}
+.correct-answer{
+    background: rgb(190, 190, 190);
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
 }

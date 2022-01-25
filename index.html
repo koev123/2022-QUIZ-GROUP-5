@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>App Quiz</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <!-- if you need menu for next task -->
     <header>
-
+        
     </header>
     <!-- display question for role teacher only -->
     <section id="edit-question">
@@ -28,14 +28,13 @@
                 <ul class="enter-question">
                     <input type="text" id="getQuestion" placeholder="Question"><br />
                     <div class="d-flex">
-                        <input type="radio" name="answer"><label for=""><input id="getChoice1" type="text" placeholder="Enter answer"></label><br>
-                        <input type="radio" name="answer"><label for=""><input id="getChoice2"  type="text" placeholder="Enter answer"></label><br>
-                        <input type="radio" name="answer"><label for=""><input id="getChoice3"  type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer-input"><label for=""><input name="answer" id="getChoice1" type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer-input"><label for=""><input name="answer" id="getChoice2"  type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer-input"><label for=""><input name="answer" id="getChoice3"  type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer-input"><label for=""><input name="answer" id="getChoice4"  type="text" placeholder="Enter answer"></label><br>
                     </div>
                     <hr />
                     <button id="add-question" class="color-blue">+ Add</button>
-                    <button id="add-display" class="color-blue">+ display</button>
-                    <button class="delete">Delete</button>
                 </ul>
             </form>
         </div>
@@ -43,6 +42,9 @@
         <div id="display-qustions">
             <!-- TODO -->
         </div>
+    </section>
+    <section id="do-quiz">
+
     </section>
     <script src="js/app.js"></script>
 </body>
