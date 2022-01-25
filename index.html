@@ -27,13 +27,15 @@
                 </ul>
                 <ul class="enter-question">
                     <input type="text" id="getQuestion" placeholder="Question"><br />
-                    <input type="radio" name="answer"><label for=""><input id="getChoice1" type="text" placeholder="Enter answer"></label><br>
-                    <input type="radio" name="answer"><label for=""><input id="getChoice2"  type="text" placeholder="Enter answer"></label><br>
-                    <input type="radio" name="answer"><label for=""><input id="getChoice3"  type="text" placeholder="Enter answer"></label><br>
+                    <div class="d-flex">
+                        <input type="radio" name="answer"><label for=""><input id="getChoice1" type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer"><label for=""><input id="getChoice2"  type="text" placeholder="Enter answer"></label><br>
+                        <input type="radio" name="answer"><label for=""><input id="getChoice3"  type="text" placeholder="Enter answer"></label><br>
+                    </div>
                     <hr />
-                    <button id="add-question" style="background: blue;">+ Add</button>
-                    <button id="add-display" style="background: blue;">+ display</button>
-                    <button class="delete" style="background:red;">Delete</button>
+                    <button id="add-question" class="color-blue">+ Add</button>
+                    <button id="add-display" class="color-blue">+ display</button>
+                    <button class="delete">Delete</button>
                 </ul>
             </form>
         </div>

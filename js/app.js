@@ -22,8 +22,6 @@ function addQuestion(e) {
     // push this object to arrays
     questions.push(object);
 }
-let btnAddQuestion = document.getElementById("add-question");
-btnAddQuestion.addEventListener("click",addQuestion);
 /*
 To display the questions from the list
 */
@@ -34,28 +32,75 @@ function displayQuestion(e) {
     // loop on questions list
     /*create form store all element from input */
     let form  = document.createElement("form");
+    form.id="from-display";
+    form.classList.add("title");
     console.log(form);
-    let ul =document.createElement("ul");
-    form.appendChild(ul);
-    let li = document.createElement("li");
-    ul.appendChild(li);
     for(let i=0;i<questions.length;i++){
-        let label1= document.createElement("label");
-        li.textContent= questions[i].Question;
-        label1.textContent+=questions[i].Choice[i]+"\n";
         // create html element follow your mock up
+        // ul create ul cover all input
+        let ul =document.createElement("ul");
+        ul.classList.add("enter-question");
+        form.appendChild(ul);
+        let li = document.createElement("li");
+        ul.appendChild(li);
+        // div cover all input and label that user input
+        let divCoverRadio = document.createElement("div");
+        divCoverRadio.classList.add("d-flex");
+        ul.appendChild(divCoverRadio);
+
+        //radio append answer as radio
         let radio1 = document.createElement("input");
         radio1.type="radio";
         radio1.name="answer";
-        ul.appendChild(radio1);
-        ul.appendChild(label1);
+         //create label for get answer 1 by index
+        let label1= document.createElement("label");
+        li.textContent= questions[i].Question;
+        label1.textContent=questions[i].Choice[0];
+        divCoverRadio.appendChild(radio1);
+        divCoverRadio.appendChild(label1);
+        
+        //radio append answer as radio
+        let radio2 = document.createElement("input");
+        radio2.type="radio";
+        radio2.name="answer";
+         //create label for get answer 2 by index
+        let label2= document.createElement("label");
+        li.textContent= questions[i].Question;
+        label2.textContent=questions[i].Choice[1];
+        divCoverRadio.appendChild(radio2);
+        divCoverRadio.appendChild(label2);
+        
+        //radio append answer as radio
+        let radio3 = document.createElement("input");
+        radio3.type="radio";
+        radio3.name="answer";
+        //create label for get answer 1 by index
+        let label3= document.createElement("label");
+        li.textContent= questions[i].Question;
+        label3.textContent=questions[i].Choice[2];
+        divCoverRadio.appendChild(radio3);
+        divCoverRadio.appendChild(label3);
+        
+        let hr = document.createElement("hr");
+        ul.appendChild(hr);
+        let btnDelete = document.createElement("button");
+        btnDelete.textContent="Delete";
+        btnDelete.classList.add("delete");
+        ul.appendChild(btnDelete);
     }
-
     // append your element to DOM tree
+    let getDisplay = document.getElementById("from-display");
+    if (getDisplay){
+        getDisplay.remove();
+    }
     appearQuestion.appendChild(form);
 }
-
+/*       store data user input  */
 let questions = [];
 console.log(questions);
+//button display question
 let btnDisplayQuestion = document.getElementById("add-display");
 btnDisplayQuestion.addEventListener("click",displayQuestion)
+//button user add question
+let btnAddQuestion = document.getElementById("add-question");
+btnAddQuestion.addEventListener("click",addQuestion);

@@ -32,3 +32,16 @@ form ul button{
     margin: 5px;
     border-radius: 5px;
 }
+li{
+    list-style: none;
+}
+.delete{
+    background: red;
+
+}
+.color-blue{
+    background: rgb(0, 0, 165);
+}
+.d-flex{
+    display: block;
+}
