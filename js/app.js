@@ -1,6 +1,11 @@
 /*
 To add the question the list of questions
 */
+/*                   koev                */
+// none start quiz
+let getStartQiuiz = document.getElementById("do-quiz");
+let getEdit = document.getElementById("edit-question");
+getStartQiuiz.style.display="none";
 function addQuestion(e) {
     e.preventDefault();
     // TODO
@@ -113,6 +118,24 @@ function displayQuestion() {
 }
 /*       store data user input  */
 let questions = [];
+// when user click on editQuiz show edit Quiz
+function editQuiz(e){
+    e.preventDefault();
+    getEdit.style.display="block";
+    getStartQiuiz.style.display="none";
+}
+//wheb user click on startQuiz show start quiz
+function startQuiz(e){
+    e.preventDefault();
+    getEdit.style.display="none";
+    getStartQiuiz.style.display="block";
+}
 //button user add question
 let btnAddQuestion = document.getElementById("add-question");
 btnAddQuestion.addEventListener("click",addQuestion);
+//button  edit quiz
+let btnEditQuiz= document.getElementById("btn-edit");
+btnEditQuiz.addEventListener("click",editQuiz);
+//button start quiz
+let btnStartQuiz = document.getElementById("btn-quiz");
+btnStartQuiz.addEventListener("click",startQuiz);

@@ -4,6 +4,37 @@ body{
     background: rgb(196, 194, 194);
     font-family: 'Times New Roman', Times, serif;
 }
+/* -------------------------koev---------- */
+nav{
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+nav ul{
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    padding: 10px;
+    background: rgba(4, 76, 145, 0.747);
+    margin-left: 10px;
+    border-radius: 5px;
+}
+nav ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}
+nav .title{
+    position: absolute;
+    left: 2em;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+}
 form{
     width: 80%;
     margin: auto;
