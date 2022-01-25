@@ -43,15 +43,15 @@ form  .title{
     display: block;
     background:white;
     padding: 45px;
-    border-top: solid 10px blue;
-    border-radius: 10px 10px 5px 5px ;
+    border-top: solid 20px blue;
+    border-radius: 15px 15px 5px 5px ;
 }
 form ul input[type="text"]{
     width: 50%;
     outline: none;
     border: none;
 }
-form .enter-question{
+.enter-question{
     background:white;
     padding: 45px;
     border-radius: 5px 5px 5px 5px;
@@ -79,9 +79,55 @@ li{
 .d-flex{
    display: block;
 }
+.mt{
+    margin-top: 15px;
+}
 .correct-answer{
     background: rgb(190, 190, 190);
     padding: 5px;
     border-radius: 5px;
     font-weight: bold;
 }
+
+.container {
+    width: 80%;
+    margin: auto;
+    border-radius: 20px;
+    border-top: 20px blue solid;
+}
+.passage{
+    padding: 30px;
+    margin-left: 40px;   
+    font-size: 17px;
+    
+}
+
+.input-radio {
+    background-color: rgb(255, 255, 255);
+    margin-top: 20px;
+    padding-top: 10px;
+    border-radius: 10px;
+}
+.quiz-title {
+ padding-left: 30px;
+}
+li{
+    list-style: none;
+    font-size:19px;
+}
+input{
+    margin-top: 10px;
+}
+.button_Submit{
+    background-color: rgb(24, 38, 236);
+    float: right;
+    padding: 10px 20px 10px 20px;
+    border: none;
+    margin: auto;
+    border-radius: 5px;
+    color: white;
+    margin-right: 15%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
