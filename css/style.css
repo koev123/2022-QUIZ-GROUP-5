@@ -67,6 +67,10 @@ form ul button{
 li{
     list-style: none;
 }
+
+.total{
+    float:right;
+}
 .delete{
     background: red;
     color: white;
