@@ -6,6 +6,9 @@ To add the question the list of questions
 let getStartQiuiz = document.getElementById("do-quiz");
 let getEdit = document.getElementById("edit-question");
 getStartQiuiz.style.display="none";
+getEdit.style.display="none";
+//hide bg
+let hidebg=document.getElementById('pictures');
 function addQuestion(e) {
     e.preventDefault();
     // TODO
@@ -20,7 +23,6 @@ function addQuestion(e) {
     let getChoiceClass = document.getElementsByName("answer-input");
     // declear a variable as an object
     let object = {};
-    
     // get the answer from input
     object["Question"]=getQuestion.value;
     object["Choice"]=[getChoice1.value,getChoice2.value,getChoice3.value,getChoice4.value];
@@ -52,7 +54,6 @@ function displayQuestion() {
         // ul create ul cover all input
         let ul =document.createElement("ul");
         ul.classList.add("enter-question");
-        ul.id="delete-parent";
         form.appendChild(ul);
         let li = document.createElement("li");
         ul.appendChild(li);
@@ -131,7 +132,6 @@ let getCorrection7 = document.getElementsByName("answer7");
 let getCorrection8 = document.getElementsByName("answer8");
 let getCorrection9 = document.getElementsByName("answer9");
 let getCorrection10 = document.getElementsByName("answer10");
-/* -- correct answers when click ----*/
 function correction(){
     let correct1=document.getElementById("correct1");
     let correct2=document.getElementById("correct2");
@@ -143,98 +143,87 @@ function correction(){
     let correct8=document.getElementById("correct8");
     let correct9=document.getElementById("correct9");
     let correct10=document.getElementById("correct10");
-    // score-=1;
     for(let i=0;i<getCorrection1.length;i++){
-        let score=0;
         if(getCorrection1[1].checked){
             correct1.textContent="correct";
-            score+=1
         }
         else{
             correct1.textContent="Incorrect";
         }
-        if(getCorrection2[2].checked){
+        if(getCorrection2[1].checked){
             correct2.textContent="correct";
-            score+=1
         }
         else{
             correct2.textContent="Incorrect";
         }
         if(getCorrection3[1].checked){
             correct3.textContent="correct";
-            score+=1
         }
         else{
             correct3.textContent="Incorrect";
         }
         if(getCorrection4[1].checked){
             correct4.textContent="correct";
-            score+=1
         }
         else{
             correct4.textContent="Incorrect";
         }
-        if(getCorrection5[2].checked){
+        if(getCorrection5[1].checked){
             correct5.textContent="correct";
-            score+=1
         }
         else{
             correct5.textContent="Incorrect";
         }
-        if(getCorrection6[2].checked){
+        if(getCorrection6[1].checked){
             correct6.textContent="correct";
-            score+=1
         }
         else{
             correct6.textContent="Incorrect";
         }
-        if(getCorrection7[0].checked){
+        if(getCorrection7[1].checked){
             correct7.textContent="correct";
-            score+=1
         }
         else{
             correct7.textContent="Incorrect";
         }
-        if(getCorrection8[2].checked){
+        if(getCorrection8[1].checked){
             correct8.textContent="correct";
-            score+=1
         }
         else{
             correct8.textContent="Incorrect";
         }
-        if(getCorrection9[3].checked){
+        if(getCorrection9[1].checked){
             correct9.textContent="correct";
-            score+=1
         }
         else{
             correct9.textContent="Incorrect";
         }
-        if(getCorrection10[0].checked){
+        if(getCorrection10[1].checked){
             correct10.textContent="correct";
-            score+=1
         }
         else{
             correct10.textContent="Incorrect";
         }
-        let getTotalScore=document.getElementById("totalScore");
-        getTotalScore.textContent=score;
     }
 }
-//  correct answer
 let submit = document.getElementById("submit-quiz");
 submit.addEventListener("click",correction);
 
-// hide and show funtion
+
+
 function editQuiz(e){
     e.preventDefault();
     getEdit.style.display="block";
     getStartQiuiz.style.display="none";
+    hidebg.style.display='none';
 }
 //wheb user click on startQuiz show start quiz
 function startQuiz(e){
     e.preventDefault();
     getEdit.style.display="none";
     getStartQiuiz.style.display="block";
+    hidebg.style.display="none";
+    btnEditQuiz.style.display="none";
 }
 
 
@@ -247,5 +236,3 @@ btnEditQuiz.addEventListener("click",editQuiz);
 //button start quiz
 let btnStartQuiz = document.getElementById("btn-quiz");
 btnStartQuiz.addEventListener("click",startQuiz);
-
-
