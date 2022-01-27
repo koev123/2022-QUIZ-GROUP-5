@@ -132,6 +132,7 @@ let getCorrection7 = document.getElementsByName("answer7");
 let getCorrection8 = document.getElementsByName("answer8");
 let getCorrection9 = document.getElementsByName("answer9");
 let getCorrection10 = document.getElementsByName("answer10");
+/* -- correct answers when click ----*/
 function correction(){
     let correct1=document.getElementById("correct1");
     let correct2=document.getElementById("correct2");
@@ -143,67 +144,81 @@ function correction(){
     let correct8=document.getElementById("correct8");
     let correct9=document.getElementById("correct9");
     let correct10=document.getElementById("correct10");
+    // score-=1;
     for(let i=0;i<getCorrection1.length;i++){
+        let score=0;
         if(getCorrection1[1].checked){
-            correct1.textContent="correct";
+            correct1.textContent="correct: 1";
+            score++;
         }
         else{
-            correct1.textContent="Incorrect";
+            correct1.textContent="Incorrect: 0";
         }
-        if(getCorrection2[1].checked){
-            correct2.textContent="correct";
+        if(getCorrection2[2].checked){
+            correct2.textContent="correct: 1";
+            score++;
         }
         else{
-            correct2.textContent="Incorrect";
+            correct2.textContent="Incorrect: 0";
         }
         if(getCorrection3[1].checked){
-            correct3.textContent="correct";
+            correct3.textContent="correct: 1";
+            score++;
         }
         else{
-            correct3.textContent="Incorrect";
+            correct3.textContent="Incorrect: 0";
         }
         if(getCorrection4[1].checked){
-            correct4.textContent="correct";
+            correct4.textContent="correct: 1";
+            score++;
         }
         else{
-            correct4.textContent="Incorrect";
+            correct4.textContent="Incorrect: 0";
         }
-        if(getCorrection5[1].checked){
-            correct5.textContent="correct";
-        }
-        else{
-            correct5.textContent="Incorrect";
-        }
-        if(getCorrection6[1].checked){
-            correct6.textContent="correct";
+        if(getCorrection5[2].checked){
+            correct5.textContent="correct: 1";
+            score++;
         }
         else{
-            correct6.textContent="Incorrect";
+            correct5.textContent="Incorrect: 0";
         }
-        if(getCorrection7[1].checked){
-            correct7.textContent="correct";
-        }
-        else{
-            correct7.textContent="Incorrect";
-        }
-        if(getCorrection8[1].checked){
-            correct8.textContent="correct";
+        if(getCorrection6[2].checked){
+            correct6.textContent="correct: 1";
+            score++;
         }
         else{
-            correct8.textContent="Incorrect";
+            correct6.textContent="Incorrect: 0";
         }
-        if(getCorrection9[1].checked){
-            correct9.textContent="correct";
-        }
-        else{
-            correct9.textContent="Incorrect";
-        }
-        if(getCorrection10[1].checked){
-            correct10.textContent="correct";
+        if(getCorrection7[0].checked){
+            correct7.textContent="correct: 1";
+            score++;
         }
         else{
-            correct10.textContent="Incorrect";
+            correct7.textContent="Incorrect: 0";
         }
+        if(getCorrection8[2].checked){
+            correct8.textContent="correct: 1";
+            score++;
+        }
+        else{
+            correct8.textContent="Incorrect: 0";
+        }
+        if(getCorrection9[3].checked){
+            correct9.textContent="correct: 1";
+            score++;
+        }
+        else{
+            correct9.textContent="Incorrect: 0";
+        }
+        if(getCorrection10[0].checked){
+            correct10.textContent="correct: 1";
+            score++;
+        }
+        else{
+            correct10.textContent="Incorrect: 0";
+        }
+        let getTotalScore=document.getElementById("totalScore");
+        getTotalScore.textContent=score;
     }
 }
 let submit = document.getElementById("submit-quiz");
