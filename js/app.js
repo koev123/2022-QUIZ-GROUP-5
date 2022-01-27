@@ -119,6 +119,96 @@ function displayQuestion() {
 /*       store data user input  */
 let questions = [];
 // when user click on editQuiz show edit Quiz
+// -----------corrrection answer when user play ----------
+let getCorrection1 = document.getElementsByName("answer1");
+let getCorrection2 = document.getElementsByName("answer2");
+let getCorrection3 = document.getElementsByName("answer3");
+let getCorrection4 = document.getElementsByName("answer4");
+let getCorrection5 = document.getElementsByName("answer5");
+let getCorrection6 = document.getElementsByName("answer6");
+let getCorrection7 = document.getElementsByName("answer7");
+let getCorrection8 = document.getElementsByName("answer8");
+let getCorrection9 = document.getElementsByName("answer9");
+let getCorrection10 = document.getElementsByName("answer10");
+function correction(){
+    let correct1=document.getElementById("correct1");
+    let correct2=document.getElementById("correct2");
+    let correct3=document.getElementById("correct3");
+    let correct4=document.getElementById("correct4");
+    let correct5=document.getElementById("correct5");
+    let correct6=document.getElementById("correct6");
+    let correct7=document.getElementById("correct7");
+    let correct8=document.getElementById("correct8");
+    let correct9=document.getElementById("correct9");
+    let correct10=document.getElementById("correct10");
+    for(let i=0;i<getCorrection1.length;i++){
+        if(getCorrection1[1].checked){
+            correct1.textContent="correct";
+        }
+        else{
+            correct1.textContent="Incorrect";
+        }
+        if(getCorrection2[1].checked){
+            correct2.textContent="correct";
+        }
+        else{
+            correct2.textContent="Incorrect";
+        }
+        if(getCorrection3[1].checked){
+            correct3.textContent="correct";
+        }
+        else{
+            correct3.textContent="Incorrect";
+        }
+        if(getCorrection4[1].checked){
+            correct4.textContent="correct";
+        }
+        else{
+            correct4.textContent="Incorrect";
+        }
+        if(getCorrection5[1].checked){
+            correct5.textContent="correct";
+        }
+        else{
+            correct5.textContent="Incorrect";
+        }
+        if(getCorrection6[1].checked){
+            correct6.textContent="correct";
+        }
+        else{
+            correct6.textContent="Incorrect";
+        }
+        if(getCorrection7[1].checked){
+            correct7.textContent="correct";
+        }
+        else{
+            correct7.textContent="Incorrect";
+        }
+        if(getCorrection8[1].checked){
+            correct8.textContent="correct";
+        }
+        else{
+            correct8.textContent="Incorrect";
+        }
+        if(getCorrection9[1].checked){
+            correct9.textContent="correct";
+        }
+        else{
+            correct9.textContent="Incorrect";
+        }
+        if(getCorrection10[1].checked){
+            correct10.textContent="correct";
+        }
+        else{
+            correct10.textContent="Incorrect";
+        }
+    }
+}
+let submit = document.getElementById("submit-quiz");
+submit.addEventListener("click",correction);
+
+
+
 function editQuiz(e){
     e.preventDefault();
     getEdit.style.display="block";
@@ -130,6 +220,7 @@ function startQuiz(e){
     getEdit.style.display="none";
     getStartQiuiz.style.display="block";
 }
+
 //button user add question
 let btnAddQuestion = document.getElementById("add-question");
 btnAddQuestion.addEventListener("click",addQuestion);
