@@ -152,74 +152,75 @@ function correction(){
             score++;
         }
         else{
-            correct1.textContent="Incorrect: 0";
+            correct1.textContent="Incorrect: 0 ;   S + V2 + Obj";
         }
         if(getCorrection2[2].checked){
             correct2.textContent="correct: 1";
             score++;
         }
         else{
-            correct2.textContent="Incorrect: 0";
+            correct2.textContent="Incorrect: 0 ;  went";
         }
         if(getCorrection3[1].checked){
             correct3.textContent="correct: 1";
             score++;
         }
         else{
-            correct3.textContent="Incorrect: 0";
+            correct3.textContent="Incorrect: 0 ; didn't";
         }
         if(getCorrection4[1].checked){
             correct4.textContent="correct: 1";
             score++;
         }
         else{
-            correct4.textContent="Incorrect: 0";
+            correct4.textContent="Incorrect: 0 ; did";
         }
         if(getCorrection5[2].checked){
             correct5.textContent="correct: 1";
             score++;
         }
         else{
-            correct5.textContent="Incorrect: 0";
+            correct5.textContent="Incorrect: 0 ; Did";
         }
         if(getCorrection6[2].checked){
             correct6.textContent="correct: 1";
             score++;
         }
         else{
-            correct6.textContent="Incorrect: 0";
+            correct6.textContent="Incorrect: 0 ;  work";
         }
         if(getCorrection7[0].checked){
             correct7.textContent="correct: 1";
             score++;
         }
         else{
-            correct7.textContent="Incorrect: 0";
+            correct7.textContent="Incorrect: 0  ;   happened and finished in the past";
         }
         if(getCorrection8[2].checked){
             correct8.textContent="correct: 1";
             score++;
         }
         else{
-            correct8.textContent="Incorrect: 0";
+            correct8.textContent="Incorrect: 0  ;    Did + S + V1(base form) +Obj?";
         }
         if(getCorrection9[3].checked){
             correct9.textContent="correct: 1";
             score++;
         }
         else{
-            correct9.textContent="Incorrect: 0";
+            correct9.textContent="Incorrect: 0  ;   S + did + not + V1(base form) + Obj";
         }
         if(getCorrection10[0].checked){
             correct10.textContent="correct: 1";
             score++;
         }
         else{
-            correct10.textContent="Incorrect: 0";
+            correct10.textContent="Incorrect: 0  ;  finished";
         }
         let getTotalScore=document.getElementById("totalScore");
         getTotalScore.textContent=score;
     }
+
 }
 let submit = document.getElementById("submit-quiz");
 submit.addEventListener("click",correction);
