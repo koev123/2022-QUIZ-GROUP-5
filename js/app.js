@@ -1,11 +1,11 @@
 /*
-To add the question the list of questions
-*/
-/*                   koev                */
+To add the question the list of questions*/
 // none start quiz
 let getStartQiuiz = document.getElementById("do-quiz");
 let getEdit = document.getElementById("edit-question");
 let appearQuestion = document.getElementById("display-qustions");
+let getTitle = document.getElementById("title_text");
+let getDescription = document.getElementById("description_text");
 // make it none on first DOM
 getStartQiuiz.style.display="none";
 getEdit.style.display="none";
@@ -29,7 +29,10 @@ function addQuestion(e) {
         || getChoice1.value.length===0 
         || getChoice2.value.length===0
         || getChoice3.value.length===0
-        || getChoice4.value.length===0){
+        || getChoice4.value.length===0
+        || getTitle.value.length===0
+        || getDescription.value.length===0){
+            // message that tell all user who not yet complete all field
             alert("Please complete  information ");
         }
     else{
@@ -236,7 +239,7 @@ function correction(){
         let getTotalScore=document.getElementById("totalScore");
         getTotalScore.textContent=score;
     }
-
+    
 }
 // funtion to edition quiz when user wrong
 function editQuiz(e){
