@@ -5,6 +5,8 @@ To add the question the list of questions
 // none start quiz
 let getStartQiuiz = document.getElementById("do-quiz");
 let getEdit = document.getElementById("edit-question");
+let appearQuestion = document.getElementById("display-qustions");
+// make it none on first DOM
 getStartQiuiz.style.display="none";
 getEdit.style.display="none";
 //hide bg
@@ -14,7 +16,6 @@ function addQuestion(e) {
     // TODO
     // get the question from input
     let getQuestion = document.getElementById("getQuestion");
-    
     // get the choice from input
     let getChoice1= document.getElementById("getChoice1");
     let getChoice2= document.getElementById("getChoice2");
@@ -23,105 +24,119 @@ function addQuestion(e) {
     let getChoiceClass = document.getElementsByName("answer-input");
     // declear a variable as an object
     let object = {};
-    // get the answer from input
-    object["Question"]=getQuestion.value;
-    object["Choice"]=[getChoice1.value,getChoice2.value,getChoice3.value,getChoice4.value];
-    // loop get checked which one correct answer
-    for (let i=0;i<getChoiceClass.length;i++){
-        if(getChoiceClass[i].checked){
-            object["answer"]=parseInt(i);
+    // when user not complete all field,it will alert to tell for complete
+    if(getQuestion.value.length===0
+        || getChoice1.value.length===0 
+        || getChoice2.value.length===0
+        || getChoice3.value.length===0
+        || getChoice4.value.length===0){
+            alert("Please complete  information ");
         }
+    else{
+        // get the answer from input
+        object["Question"]=getQuestion.value;
+        object["Choice"]=[getChoice1.value,getChoice2.value,getChoice3.value,getChoice4.value];
+        // loop get checked which one correct answer
+        for (let i=0;i<getChoiceClass.length;i++){
+            if(getChoiceClass[i].checked){
+                //append index to answer
+                object["answer"]=parseInt(i);
+            }
+        }
+        questions.push(object);
     }
     // push this object to arrays
-    questions.push(object);
     displayQuestion();
 }
+/*       store data user input  */
+let questions = [];
 /*
 To display the questions from the list
 */
-let appearQuestion = document.getElementById("display-qustions");
 function displayQuestion() {
-    // e.preventDefault();
     //TODO
     // loop on questions list
     /*create form store all element from input */
     let form  = document.createElement("form");
     form.id="from-display";
-    form.classList.add("title");
-    console.log(form);
     for(let i=0;i<questions.length;i++){
-        // create html element follow your mock up
+        /*create html element follow your mock up*/
         // ul create ul cover all input
         let ul =document.createElement("ul");
         ul.classList.add("enter-question");
-        form.appendChild(ul);
         let li = document.createElement("li");
-        ul.appendChild(li);
         // div cover all input and label that user input
         let divCoverRadio = document.createElement("div");
         divCoverRadio.classList.add("d-flex");
-        ul.appendChild(divCoverRadio);
-
+        //break line on first  label 
         let breakLine1 = document.createElement("br");
-        divCoverRadio.appendChild(breakLine1)
-
-         //create label for get answer 1 by index
+        
+        //create label for get answer 1 by index
         let label1= document.createElement("label");
         li.textContent= questions[i].Question;
         label1.textContent=questions[i].Choice[0];
-        divCoverRadio.appendChild(label1);
+        //break line on second  label 
         let breakLine2 = document.createElement("br");
-        divCoverRadio.appendChild(breakLine2)
         
-         //create label for get answer 2 by index
+        //create label for get answer 2 by index
         let label2= document.createElement("label");
         li.textContent= questions[i].Question;
         label2.textContent=questions[i].Choice[1];
-        divCoverRadio.appendChild(label2);
-        
+        //break line on third  label 
         let breakLine3 = document.createElement("br");
-        divCoverRadio.appendChild(breakLine3)
+
         //create label for get answer 1 by index
         let label3= document.createElement("label");
         li.textContent= questions[i].Question;
         label3.textContent=questions[i].Choice[2];
-        divCoverRadio.appendChild(label3);
         
         let breakLine4 = document.createElement("br");
-        divCoverRadio.appendChild(breakLine4)
         //create label for get answer 1 by index
         let label4= document.createElement("label");
         li.textContent= questions[i].Question;
         label4.textContent=questions[i].Choice[3];
-        divCoverRadio.appendChild(label4);
-
+        // draw line below question and multiple choice
         let hr = document.createElement("hr");
-        ul.appendChild(hr);
+
         let btnDelete = document.createElement("button");
         btnDelete.textContent="Delete";
         btnDelete.classList.add("delete");
-        ul.appendChild(btnDelete);
-
+        
         //create label for get answer 1 by index
         let label5 = document.createElement("label");
         label5.classList.add("correct-answer");
         li.textContent=questions[i].Question;
+        // get answer to display below question make sure that we insert correct
         let number=0;
         number=questions[i].answer;
         label5.textContent="Answer: "+questions[i].Choice[number];
+        
+        // append to item 
+        form.appendChild(ul);
+        ul.appendChild(li);
+        ul.appendChild(divCoverRadio);
+        divCoverRadio.appendChild(breakLine1)
+        divCoverRadio.appendChild(label1);
+        divCoverRadio.appendChild(breakLine2)
+        divCoverRadio.appendChild(label2);
+        divCoverRadio.appendChild(breakLine3)
+        divCoverRadio.appendChild(label3);
+        divCoverRadio.appendChild(breakLine4)
+        ul.appendChild(hr);
+        divCoverRadio.appendChild(label4);
+        ul.appendChild(btnDelete);
         ul.appendChild(label5 );
     }
-    // append your element to DOM tree
+    //remove element for not display again which one already insert
     let getDisplay = document.getElementById("from-display");
     if (getDisplay){
         getDisplay.remove();
     }
+    // display all information to form 
     appearQuestion.appendChild(form);
 }
-/*       store data user input  */
-let questions = [];
 // when user click on editQuiz show edit Quiz
-// -----------corrrection answer when user play ----------
+// -----get check by name property get which one that user click----------
 let getCorrection1 = document.getElementsByName("answer1");
 let getCorrection2 = document.getElementsByName("answer2");
 let getCorrection3 = document.getElementsByName("answer3");
@@ -134,6 +149,7 @@ let getCorrection9 = document.getElementsByName("answer9");
 let getCorrection10 = document.getElementsByName("answer10");
 /* -- correct answers when click ----*/
 function correction(){
+    // display correct answer to DOM when user submit 
     let correct1=document.getElementById("correct1");
     let correct2=document.getElementById("correct2");
     let correct3=document.getElementById("correct3");
@@ -144,7 +160,7 @@ function correction(){
     let correct8=document.getElementById("correct8");
     let correct9=document.getElementById("correct9");
     let correct10=document.getElementById("correct10");
-    // score-=1;
+    // loop on name and use condition to get all user click
     for(let i=0;i<getCorrection1.length;i++){
         let score=0;
         if(getCorrection1[1].checked){
@@ -222,11 +238,7 @@ function correction(){
     }
 
 }
-let submit = document.getElementById("submit-quiz");
-submit.addEventListener("click",correction);
-
-
-
+// funtion to edition quiz when user wrong
 function editQuiz(e){
     e.preventDefault();
     getEdit.style.display="block";
@@ -252,3 +264,6 @@ btnEditQuiz.addEventListener("click",editQuiz);
 //button start quiz
 let btnStartQuiz = document.getElementById("btn-quiz");
 btnStartQuiz.addEventListener("click",startQuiz);
+// button submit quiz
+let submit = document.getElementById("submit-quiz");
+submit.addEventListener("click",correction);
